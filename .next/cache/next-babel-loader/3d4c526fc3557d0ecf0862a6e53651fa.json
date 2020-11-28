@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { jsx as _jsx } from \"react/jsx-runtime\";\nimport Link from \"next/link\";\nimport Layout from '../components/Layout';\nexport default (function () {\n  return /*#__PURE__*/_jsx(Layout, {\n    header: \"Next\",\n    title: \"Top page.\",\n    children: \"Hello World\"\n  });\n});","map":null,"metadata":{},"sourceType":"module"}

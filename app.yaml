@@ -1,0 +1,12 @@
+runtime: nodejs12
+
+handlers:
+  - url: /static
+    static_dir: out/static
+  - url: /(.*\.(json|ico|js))$
+    static_files: out/\1
+    upload: out.*\.(json|ico|js)$
+  - url: .*
+    static_files: out/index.html
+    upload: out/index.html
+    expiration: '0s'
