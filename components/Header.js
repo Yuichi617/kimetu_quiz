@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 
 class Header extends Component {
      render(){
-         return(<header>
-            <div>{this.props.header}</div>
-            <h1>{this.props.title}</h1>
+         return(<header className="site-header">
+             <div className="site_name"> 鬼滅力診断 </div>
          </header>);
      }
 }

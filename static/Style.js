@@ -1,44 +1,102 @@
 export default <style>{`
+body {
+    text-align: center;
+    min-width: 320px;
+    color: black;
+    background-color: #FFF;
+    font-size: 14px;
+  }
 
-    body{
-        margine:10px;
-        padding:5px;
-        color:#669;
-    }
+/*ヘッダー*/
+.site-header .site_name {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 20px;
+}
 
-    header{
-        font-size:64pt;
-        font-weight:bold;
-        text-align:right;
-        letter-spacing:-8px;
-        color:#ddddff;
-        margin:-32px 5px;
-    }
+/*メイン*/
+.main-screen {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: solid 2px #000000;
+    border-radius: 5px;
+    padding: 20px;
+}
 
-    footer{
-        color:#99c;
-        font-size:12pt;
-        text-align:right;
-        border-bottom:1px solid #99c;
-        margin:50px 0px 10px 0px;
-        position:relative;
-        bottom:10px;
-        right:10px;
-        left:10px;
-    }
+.main-screen .text1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
 
-    h1{
-        font-size:22pt;
-        font-weight:bold;
-        text-align:left;
-        letter-spacing:0px;
-        color:#77a;
-        margin:-50px 0px 50px 0px;
-    }
+.main-screen .start_btn {
+    width: 20%;
+    color: white;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #808080;
+    border-radius: 5px;
+    padding: 5px 5px; 
+    cursor: pointer;
+}
 
-    p{
-        margin:0px;
-        color:#669;
-        font-size:16pt;
-    }
+.main-screen .question_box {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #dcdcdc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.main-screen .choices {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #dcdcdc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.main-screen .ans_btn {
+    width: 20%;
+    color: white;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #808080;
+    border-radius: 5px;
+    padding: 5px 5px; 
+    cursor: pointer;
+}
+
+.main-screen .timeup_text{
+    font-size: 20px;
+}
+
+.main-screen .result_text1{
+    font-size: 18px;
+}
+
+.main-screen .result_text2{
+    font-size: 30px;
+}
+
+.main-screen .hierarchie_pic{
+    width:60%;
+    margin:0 auto;
+    background-color: darkgreen;
+    margin-bottom: 20px;
+}
+
+.main-screen .retry_btn {
+    width: 20%;
+    color: white;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #808080;
+    border-radius: 5px;
+    padding: 5px 5px; 
+    cursor: pointer;
+}
     `}</style>;
