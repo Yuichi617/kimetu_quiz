@@ -49,7 +49,7 @@ body {
     margin-bottom: 20px;
 }
 
-.main-screen .choices {
+.main-screen .choice_box {
     width: 90%;
     margin: 0 auto;
     background-color: #dcdcdc;
