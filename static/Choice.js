@@ -1,15 +1,28 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
 class Choice extends Component{
+
     constructor(props){
         super(props);
-        this.cname = "./static/choices/" + props.cname;
     }
 
     render(){
         return (
-            <object data={this.cname} type="text/plain" width="80%"></object>
+            <div className="options">
+                <label　className="option" onClick={()=>this.props.dispatch({type: 'UPDATE1'})}>
+                    <input type="radio" name="options" /><span>{this.props.options[0]}</span>
+                </label>
+                <label className="option" onClick={()=>this.props.dispatch({type: 'UPDATE2'})}>
+                    <input type="radio" name="options" /><span>{this.props.options[1]}</span>
+                </label>
+                <label className="option" onClick={()=>this.props.dispatch({type: 'UPDATE3'})}>
+                    <input type="radio" name="options" /><span>{this.props.options[2]}</span>
+                </label>
+            </div>
         );
     }
 }
+
+Choice = connect((state)=>state)(Choice)
 export default Choice;

@@ -99,4 +99,12 @@ body {
     padding: 5px 5px; 
     cursor: pointer;
 }
+
+.choice_box .options .option{
+    display: block; /* 縦並びに */
+    width: 90%;
+    margin-right:auto;
+    cursor: pointer;
+    user-select: none;
+}
     `}</style>;
