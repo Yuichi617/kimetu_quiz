@@ -1,36 +1,71 @@
 import { createStore, applyMiddleware} from 'redux';
 import thunkMiddleware from 'redux-thunk';
+import json_data from './static/question_set.json'
 
 //ステート初期化
-const initial = {
-    message : 'START',
-    count : 0
+const result = {
+    q_no : [0,1,2,3,4],
+    question : json_data,
+    i : 0,
+    correct: 0,
+    incorrect: 0,
+    select: 0
 }
 
 //レデューサ
-function counterReducer (state = initial, action){
+function counterReducer (state = result, action){
     switch (action.type){
-        case 'INCREMENT':
+        case 'CORRECT':
             return{
-                message: 'INCREMENT',
-                count: state.count + 1
+                q_no : state.q_no,
+                question : state.question,
+                i : state.i + 1,
+                correct : state.correct + 1,
+                incorrect : state.incorrect,
+                select: 0
             };
-        case 'DECREMENT':
+        case 'INCORRECT':
             return{
-                message: 'DECREMENT',
-                count: state.count - 1
+                q_no : state.q_no,
+                question : state.question,
+                i : state.i + 1,
+                correct : state.correct,
+                incorrect : state.incorrect + 1,
+                select: 0
             };
-        case 'RESET':
+        case 'UPDATE1':
             return{
-                message: 'RESET',
-                count: initial.count
+                q_no : state.q_no,
+                question : state.question,
+                i : state.i,
+                correct : state.correct,
+                incorrect : state.incorrect,
+                select: 1
             };
+        case 'UPDATE2':
+            return{
+                q_no : state.q_no,
+                question : state.question,
+                i : state.i,
+                correct : state.correct,
+                incorrect : state.incorrect,
+                select: 2
+            };    
+        case 'UPDATE3':
+            return{
+                q_no : state.q_no,
+                question : state.question,
+                i : state.i,
+                correct : state.correct,
+                incorrect : state.incorrect,
+                select: 3
+            }; 
         default:
             return state;
     }
 }
 
 //initStore関数
-export function initStore(state=initial){
+export function initStore(state=result){
     return createStore(counterReducer, state, applyMiddleware(thunkMiddleware))
 }
