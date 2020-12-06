@@ -24,14 +24,25 @@ class Main extends Component{
         return(
             <Layout>
                 <div className="main-screen">
-                   <div className="question_box">
-                       <Question q_sentence={this.props.question[this.props.q_no[this.props.i]].q_sentence} />
-                   </div>
-                   <div className="choice_box">
-                       <Choice options={this.props.question[this.props.q_no[this.props.i]].options}/>
+                    <div className="question_box">
+                        <div>
+                            {this.props.question[this.props.q_no[this.props.i]].q_sentence}
+                        </div>
+                    </div>
+                    <div className="choice_box">
+                        <div className="options">
+                            <label　className="option" onClick={()=>this.props.dispatch({type: 'UPDATE1'})}>
+                                <input type="radio" name="options" /><span>{this.props.question[this.props.q_no[this.props.i]].options[0]}</span>
+                            </label>
+                            <label className="option" onClick={()=>this.props.dispatch({type: 'UPDATE2'})}>
+                                <input type="radio" name="options" /><span>{this.props.question[this.props.q_no[this.props.i]].options[1]}</span>
+                            </label>
+                            <label className="option" onClick={()=>this.props.dispatch({type: 'UPDATE3'})}>
+                                <input type="radio" name="options" /><span>{this.props.question[this.props.q_no[this.props.i]].options[2]}</span>
+                            </label>
+                        </div>
                    </div>
                     <div className="ans_btn" onClick={this.doAction}>回答</div>
-                    {this.Checkfinish}
                </div>
            </Layout>
         )

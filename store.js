@@ -1,11 +1,10 @@
 import { createStore, applyMiddleware} from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import json_data from './static/question_set.json'
 
 //ステート初期化
 const result = {
-    q_no : [0,1,2,3,4],
-    question : json_data,
+    q_no : [],
+    question : null,
     i : 0,
     correct: 0,
     incorrect: 0,
@@ -15,6 +14,15 @@ const result = {
 //レデューサ
 function counterReducer (state = result, action){
     switch (action.type){
+        case 'SETINFO':
+            return{
+                q_no : action.rand_arr,
+                question : action.question,
+                i : state.i,
+                correct : state.correct,
+                incorrect : state.incorrect,
+                select: state.select
+            };
         case 'CORRECT':
             return{
                 q_no : state.q_no,
