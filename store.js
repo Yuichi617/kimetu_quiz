@@ -1,8 +1,10 @@
 import { createStore, applyMiddleware} from 'redux';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 import thunkMiddleware from 'redux-thunk';
 
 //ステート初期化
-const result = {
+const info = {
     q_no : [],
     question : null,
     i : 0,
@@ -12,16 +14,16 @@ const result = {
 }
 
 //レデューサ
-function counterReducer (state = result, action){
+function counterReducer (state = info, action){
     switch (action.type){
         case 'SETINFO':
             return{
                 q_no : action.rand_arr,
                 question : action.question,
-                i : state.i,
-                correct : state.correct,
-                incorrect : state.incorrect,
-                select: state.select
+                i : 0,
+                correct : 0,
+                incorrect : 0,
+                select: 0
             };
         case 'CORRECT':
             return{
@@ -73,7 +75,24 @@ function counterReducer (state = result, action){
     }
 }
 
+//Redux Persistの設定
+const persistConfig = {
+    key: 'root',
+    storage ,
+}
+
+//パーシストレデューサの作成
+const persistedReducer = persistReducer(persistConfig, counterReducer)
+
+//ストア、パーシスターの作成
+let store = createStore(persistedReducer, info, applyMiddleware(thunkMiddleware))
+let pstore = persistStore(store)
+
 //initStore関数
-export function initStore(state=result){
+export function initStore(state=info){
     return createStore(counterReducer, state, applyMiddleware(thunkMiddleware))
 }
+
+//export function initStore(state=info){
+//    return persistStore(createStore(persistedReducer, state, applyMiddleware(thunkMiddleware)))
+//}

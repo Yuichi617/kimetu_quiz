@@ -2,6 +2,7 @@ import App, {Container} from 'next/app';
 import React from 'react';
 import withReduxStore from '../lib/redux-store';
 import {Provider} from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react'
 
 class _App extends App{
     render(){

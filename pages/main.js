@@ -1,9 +1,11 @@
 import Link from "next/link";
 import Layout from '../components/Layout';
-import Question from '../static/Question';
-import Choice from '../static/Choice';
+import Question from '../components/Question';
+import Choice from '../components/Choice';
+import Result from '../components/Result'
 import { Component } from "react";
 import {connect} from 'react-redux';
+import { useRouter } from 'next/router'
 
 class Main extends Component{
 
@@ -13,37 +15,37 @@ class Main extends Component{
     }
 
     doAction(e){
+        //選択肢のチェックを外す
+        for (const element of document.getElementsByName('option')) {
+            element.checked = false;
+          }
+        //ストアに回答データを登録
         if(this.props.select == this.props.question[this.props.q_no[this.props.i]].answer){
-            return this.props.dispatch({ type: 'CORRECT'});
+            this.props.dispatch({ type: 'CORRECT'});
         } else {
-            return this.props.dispatch({ type: 'INCORRECT'});
+            this.props.dispatch({ type: 'INCORRECT'});
+        }
+        //最終問題の場合結果画面へ遷移
+        if(this.props.i===4){
+            const router = useRouter();
+            router.push('/Judge');
+            return <div />;
         }
     }
-
+    
     render(){
         return(
             <Layout>
                 <div className="main-screen">
-                    <div className="question_box">
-                        <div>
-                            {this.props.question[this.props.q_no[this.props.i]].q_sentence}
-                        </div>
-                    </div>
-                    <div className="choice_box">
-                        <div className="options">
-                            <label　className="option" onClick={()=>this.props.dispatch({type: 'UPDATE1'})}>
-                                <input type="radio" name="options" /><span>{this.props.question[this.props.q_no[this.props.i]].options[0]}</span>
-                            </label>
-                            <label className="option" onClick={()=>this.props.dispatch({type: 'UPDATE2'})}>
-                                <input type="radio" name="options" /><span>{this.props.question[this.props.q_no[this.props.i]].options[1]}</span>
-                            </label>
-                            <label className="option" onClick={()=>this.props.dispatch({type: 'UPDATE3'})}>
-                                <input type="radio" name="options" /><span>{this.props.question[this.props.q_no[this.props.i]].options[2]}</span>
-                            </label>
-                        </div>
+                   <div className="question_box">
+                       <Question />
+                   </div>
+                   <div className="choice_box">
+                       <Choice />
                    </div>
                     <div className="ans_btn" onClick={this.doAction}>回答</div>
                </div>
+               <Result />
            </Layout>
         )
     }
