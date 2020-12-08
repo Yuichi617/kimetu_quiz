@@ -12,6 +12,7 @@ class Main extends Component{
     constructor(props){
         super(props);
         this.doAction = this.doAction.bind(this);
+        this.flg = true;
     }
 
     doAction(e){
@@ -27,25 +28,25 @@ class Main extends Component{
         }
         //最終問題の場合結果画面へ遷移
         if(this.props.i===4){
-            const router = useRouter();
-            router.push('/Judge');
-            return <div />;
+            this.flg = false;
         }
     }
     
     render(){
         return(
             <Layout>
-                <div className="main-screen">
-                   <div className="question_box">
-                       <Question />
-                   </div>
-                   <div className="choice_box">
-                       <Choice />
-                   </div>
+                {this.flg ?
+                    <div className="main-screen">
+                        <div className="question_box">
+                            <Question />
+                        </div>
+                        <div className="choice_box">
+                            <Choice />
+                        </div>
                     <div className="ans_btn" onClick={this.doAction}>回答</div>
-               </div>
-               <Result />
+                    </div>
+                :
+               <Result /> }
            </Layout>
         )
     }
