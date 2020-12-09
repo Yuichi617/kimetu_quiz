@@ -20,8 +20,8 @@ class index extends Component{
             }
             return array;
           }
-        var arr = shuffle([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]);
-        arr = arr.slice(0,5)
+        var arr = shuffle([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]);
+        arr = arr.slice(0,10)
 
         return this.props.dispatch({ type: 'SETINFO', question: json_data, rand_arr: arr});
     }
@@ -32,7 +32,7 @@ class index extends Component{
                 <div className="main-screen">
                     <div className="text1">このクイズであなたの鬼滅力を試すことができます。</div>
                     <Link href="/Main">
-                        <div className="start_btn" onClick={this.setInfo}>スタート</div>
+                        <div className="start_btn" onClick={this.setInfo}>始める</div>
                     </Link>
                 </div>
             </Layout>

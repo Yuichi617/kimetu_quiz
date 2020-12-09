@@ -1,7 +1,14 @@
 export default <style>{`
 body {
+    background-image: url("./static/images/background.png");
+    background-repeat: repeat;
+    background-size: 40vw 40vw;
+    font-family: serif;
+    font-weight: 500;
     text-align: center;
     min-width: 320px;
+    max-width: 900px;
+    margin: 0 auto;
     color: black;
     background-color: #FFF;
     font-size: 14px;
@@ -14,8 +21,13 @@ body {
     padding-top: 20px;
 }
 
+.site-header .oni {
+    color: darkred;
+}
+
 /*メイン*/
 .main-screen {
+    background-color: white;
     width: 70%;
     margin: 0 auto;
     margin-top: 20px;
@@ -35,10 +47,20 @@ body {
     margin: 0 auto;
     font-size: 20px;
     font-weight: bold;
-    background-color: #808080;
+    background-color: #383838;
     border-radius: 5px;
     padding: 5px 5px; 
     cursor: pointer;
+}
+
+.main-screen .question_no_box {
+    width: 90%;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.main-screen .question_no_box .question_no{
+    font-weight: bold;
 }
 
 .main-screen .question_box {
@@ -57,29 +79,22 @@ body {
     margin-bottom: 20px;
 }
 
+.main-screen .choice_box .options{
+    text-align: left;
+}
+
 .main-screen .ans_btn {
     width: 20%;
     color: white;
     margin: 0 auto;
     font-size: 20px;
     font-weight: bold;
-    background-color: #808080;
+    background-color: #383838;
     border-radius: 5px;
     padding: 5px 5px; 
     cursor: pointer;
 }
 
-.main-screen .timeup_text{
-    font-size: 20px;
-}
-
-.main-screen .result_text1{
-    font-size: 18px;
-}
-
-.main-screen .result_text2{
-    font-size: 30px;
-}
 
 .main-screen .hierarchie_pic{
     width:60%;
@@ -98,13 +113,5 @@ body {
     border-radius: 5px;
     padding: 5px 5px; 
     cursor: pointer;
-}
-
-.choice_box .options .option{
-    display: block; /* 縦並びに */
-    width: 90%;
-    margin-right:auto;
-    cursor: pointer;
-    user-select: none;
 }
     `}</style>;

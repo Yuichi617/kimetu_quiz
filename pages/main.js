@@ -27,7 +27,7 @@ class Main extends Component{
             this.props.dispatch({ type: 'INCORRECT'});
         }
         //最終問題の場合結果画面へ遷移
-        if(this.props.i===4){
+        if(this.props.i===9){
             this.flg = false;
         }
     }
@@ -37,6 +37,9 @@ class Main extends Component{
             <Layout>
                 {this.flg ?
                     <div className="main-screen">
+                        <div className="question_no_box">
+                            <span className="question_no">第{this.props.i + 1}問</span>
+                        </div>
                         <div className="question_box">
                             <Question />
                         </div>
