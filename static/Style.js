@@ -1,8 +1,8 @@
 export default <style>{`
 body {
-    background-image: url("./static/images/background.png");
+    */background-image: url("./static/images/background.png");
     background-repeat: repeat;
-    background-size: 40vw 40vw;
+    background-size: 40vw 40vw;*/
     font-family: serif;
     font-weight: 500;
     text-align: center;
@@ -26,22 +26,22 @@ body {
 }
 
 /*メイン*/
-.main-screen {
+.top-main-screen{
     background-color: white;
-    width: 70%;
+    width: 60%;
     margin: 0 auto;
     margin-top: 20px;
-    border: solid 2px #000000;
-    border-radius: 5px;
-    padding: 20px;
+    border: solid 1.5px #000000;
+    border-radius: 1px;
+    padding: 50px 20px;
 }
 
-.main-screen .text1 {
+.top-main-screen .text1 {
     font-size: 20px;
     margin-bottom: 20px;
 }
 
-.main-screen .start_btn {
+.top-main-screen .start_btn {
     width: 20%;
     color: white;
     margin: 0 auto;
@@ -53,34 +53,78 @@ body {
     cursor: pointer;
 }
 
-.main-screen .question_no_box {
+.top-main-screen .start_btn:hover{
+    background-color: #808080;
+}
+
+.main-screen {
+    background-image: url("./static/images/background.png");
+    background-repeat: repeat;
+    background-size: 60px 60px;
+    background-color: white;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: solid 1.5px #000000;
+    border-radius: 1px;
+    padding: 50px 20px;
+}
+
+.main-screen .question-screen{
+    background-color: white;
     width: 90%;
-    padding-left: 20px;
-    text-align: left;
+    margin: 0 auto;
+    border: solid 1.5px white;
+    border-radius: 5px;
+}
+
+.main-screen .question_no_box {
+    width: 10%;
+    padding: 5px 10px;
+    margin: 10px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    text-align: center;
 }
 
 .main-screen .question_no_box .question_no{
+    font-size:1.5vw;
     font-weight: bold;
 }
 
 .main-screen .question_box {
+    font-size: 2vw;
     width: 90%;
     margin: 0 auto;
-    background-color: #dcdcdc;
-    padding: 20px;
+    background-color: white;
+    padding: 10px;
     margin-bottom: 20px;
 }
 
 .main-screen .choice_box {
+    font-size: 1.8vw;
     width: 90%;
     margin: 0 auto;
-    background-color: #dcdcdc;
-    padding: 20px;
+    background-color: white;
+    padding: 5px;
     margin-bottom: 20px;
 }
 
 .main-screen .choice_box .options{
-    text-align: left;
+    text-align: center;
+}
+
+.main-screen .choice_box .options .option{
+    cursor: pointer;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom:10px;
+    border: solid 1.5px #dcdcdc;
+    border-radius: 5px;
+}
+
+.main-screen .choice_box .options .option:hover{
+    background-color: #f5f5f5;
 }
 
 .main-screen .ans_btn {

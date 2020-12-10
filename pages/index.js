@@ -29,9 +29,9 @@ class index extends Component{
     render(){
         return(
             <Layout>
-                <div className="main-screen">
+                <div className="top-main-screen">
                     <div className="text1">このクイズであなたの鬼滅力を試すことができます。</div>
-                    <Link href="/Main">
+                    <Link href="/Main2">
                         <div className="start_btn" onClick={this.setInfo}>始める</div>
                     </Link>
                 </div>

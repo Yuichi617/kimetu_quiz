@@ -19,10 +19,10 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/index.js"
     ],
-    "/Main": [
+    "/Main2": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/Main.js"
+      "static/chunks/pages/Main2.js"
     ],
     "/_app": [
       "static/chunks/main.js",
