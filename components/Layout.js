@@ -13,6 +13,7 @@ class Layout extends Component {
                 <title>鬼滅力診断</title>
                 <meta charSet='utf-8' />
                 <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+                <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet"></link>
             </Head>
             {reset}
             {style}

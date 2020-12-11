@@ -1,14 +1,16 @@
 {
     "scripts": {
         "dev": "next",
-        "build": "next build",
-        "start": "next start",
-        "export": "next export"
+        "build": "rm -rf ./build && NODE_ENV=production next build",
+        "start": "next start -p 8080",
+        "export": "next export",
+        "deploy": "npm run build && gcloud app deploy"
     },
     "dependencies": {
         "next": "^10.0.3",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
+        "react-modal": "^3.12.1",
         "react-redux": "^7.2.2",
         "redux": "^4.0.5",
         "redux-persist": "^6.0.0",
